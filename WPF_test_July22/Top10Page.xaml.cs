@@ -13,41 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace WPF_test_July22
 {
-
-
-
-    public class GetInfoUsingAPI
-    {
-       
-    }
-
-
-
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Top10Page.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Top10Page : Page
     {
-        public MainWindow()
+        public Top10Page()
         {
-
             InitializeComponent();
-            
-            ApiHelper.InitializeClient();
-
-            AppViewModel context = new AppViewModel();
-
-            DataContext = context;
-
-            
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }
