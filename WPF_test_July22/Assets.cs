@@ -12,5 +12,7 @@ namespace WPF_test_July22
     {
         public Coin[] assets { get; set; }
 
+        public Coin asset { get; set; }
+
     }
 }

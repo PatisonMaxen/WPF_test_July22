@@ -16,14 +16,14 @@
 
         <Button Content="Top 10" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="53" Command="{Binding Path=bTop10_Click}"/>
 
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="68,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="163" FontSize="16"/>
-
-        <Button Content="Search" HorizontalAlignment="Left" Height="25" Margin="236,10,0,0" VerticalAlignment="Top" Width="69"/>
+        <Button Content="Search" HorizontalAlignment="Left" Height="25" Margin="236,10,0,0" VerticalAlignment="Top" Width="69" Command="{Binding Path=bSearch_Click}" />
 
         <ComboBox HorizontalAlignment="Left" Height="25" Margin="310,10,0,0" VerticalAlignment="Top" Width="64" SelectedIndex="0">
             <TextBlock>Name</TextBlock>
             <TextBlock>ID</TextBlock>
         </ComboBox>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="68,10,0,0" TextWrapping="Wrap" Text="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="163"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="262,40,0,0" TextWrapping="Wrap" Text="{Binding ID}" VerticalAlignment="Top" Width="112"/>
 
 
 

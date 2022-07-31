@@ -20,6 +20,11 @@ namespace WPF_test_July22
 
         private SearchPage searchPage;
 
+        private string iD;
+
+        private SearchFields sFields;
+
+
         public AppViewModel()
         {
             
@@ -31,11 +36,27 @@ namespace WPF_test_July22
 
             CurrentPage = top10Page;
 
-            
+            ID = "";
+
+            sFields = new SearchFields();
+
+            searchPage.DataContext = sFields;
 
         }
 
-        
+        public string ID
+        {
+            get
+            {
+                return iD;
+            }
+
+            set
+            {
+                iD = value;
+                OnPropertyChanged("ID"); 
+            }
+        }
 
         public Page CurrentPage 
         { 
@@ -56,6 +77,17 @@ namespace WPF_test_July22
                 return new RelayCommand(() => CurrentPage = top10Page);
             }
        
+        }
+
+     
+
+        public ICommand bSearch_Click
+        {
+            get
+            {
+                return new RelayCommand(() => { sFields.GetSearchResult(ID); CurrentPage = searchPage;  });
+            }
+
         }
 
 

@@ -14,6 +14,8 @@ namespace WPF_test_July22
         public string asset_id { get; set; }
         public string name { get; set; }
         public double price { get; set; }
+        public double volume_24h { get; set; }
+        public double change_24h { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

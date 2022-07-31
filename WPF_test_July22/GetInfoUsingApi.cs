@@ -29,5 +29,24 @@ namespace WPF_test_July22
             }
         }
 
+        public static async Task<Assets> GetAssets(string ID)
+        {
+            string url = "https://cryptingup.com/api/assets/" + ID;
+
+            using (HttpResponseMessage response = ApiHelper.ApiClient.GetAsync(url).Result)
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    Assets asset = await response.Content.ReadAsAsync<Assets>();
+
+                    return asset;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
     }
 }

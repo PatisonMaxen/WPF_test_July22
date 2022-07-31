@@ -80,6 +80,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AssetsLoader.cs" />
+    <Compile Include="OneAssetLoader.cs" />
+    <Compile Include="SearchFields.cs" />
     <Compile Include="SearchPage.xaml.cs">
       <DependentUpon>SearchPage.xaml</DependentUpon>
     </Compile>

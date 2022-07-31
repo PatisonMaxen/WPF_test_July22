@@ -38,11 +38,11 @@ namespace WPF_test_July22
             
             ApiHelper.InitializeClient();
 
-            AppViewModel context = new AppViewModel();
-
-            DataContext = context;
-
             
+
+            DataContext = new AppViewModel();
+
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
