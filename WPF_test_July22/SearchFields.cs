@@ -5,105 +5,146 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Collections.ObjectModel;
+using System.Windows.Controls;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
 
 namespace WPF_test_July22
 {
+    // Class for DataContext and logic for Search page
     class SearchFields : INotifyPropertyChanged
     {
-        private string asset_id;
-        private string name;
-        private double price;
-        private double volume_24h;
-        private double change_24h;
+        private Page searchSubpage;
+        private MarketsPage marketsPage;
+        private QuotePage quotePage;
+        private string buttonText;
+        public Markets markets;
 
         public Assets asset;
 
-        public string Asset_id
+        private Assets namesIDs;
+        private MarketsQuotes marketsQuotes;
+
+        public ObservableCollection<InternalExchangesType> sixMarkets { get; set; } // using ObservableCollections for change events
+        public ObservableCollection<Coin> searchFields { get; set; }
+
+        public SearchFields()
+        {
+            namesIDs = new Assets();
+            sixMarkets = new ObservableCollection<InternalExchangesType>();
+            searchFields = new ObservableCollection<Coin>();
+            marketsPage = new MarketsPage();
+            quotePage = new QuotePage();
+            marketsQuotes = new MarketsQuotes();
+
+            marketsQuotes.SetFields(sixMarkets, searchFields);
+
+            SearchSubpage = marketsPage;
+
+            marketsPage.DataContext = marketsQuotes;
+            quotePage.DataContext = marketsQuotes;
+            searchFields.Add(new Coin());
+            ButtonText = "Markets";
+            namesIDs = GetInfoUsingApi.GetNamesIDs();
+        }
+
+        public string ButtonText
         {
             get
             {
-                return asset_id;
+                return buttonText;
             }
 
             set
             {
-                asset_id = value;
-                OnPropertyChanged("Asset_id");
+                buttonText = value;
+                OnPropertyChanged("ButtonText");
             }
         }
-        public string Name
+        public Page SearchSubpage
         {
-            get
-            {
-                return name;
-            }
+            get => searchSubpage;
 
             set
             {
-                name = value;
-                OnPropertyChanged("Name");
-            }
-        }
-        public double Price
-        {
-            get
-            {
-                return price;
-            }
-
-            set
-            {
-                price = value;
-                OnPropertyChanged("Price");
+                searchSubpage = value;
+                OnPropertyChanged("SearchSubpage");
             }
         }
 
-        public double Volume_24h
+        // getting results by call for Search page and subpages
+        public void GetSearchResult(string calledValue)
         {
-            get
+
+            string ID = NameOrID(calledValue);
+
+            if(ID == " ")
             {
-                return volume_24h;
+                asset = null;
+                return;
             }
 
-            set
-            {
-                volume_24h = value;
-                OnPropertyChanged("Volume_24h");
-            }
+            asset = GetInfoUsingApi.GetOneAsset(ID);
+            markets = GetInfoUsingApi.GetMarkets(ID);
+            
+            searchFields.Clear();
+            searchFields.Add(asset.asset);
+
+            SaveMarkets();
+
+            marketsQuotes.SetFields(sixMarkets, searchFields);
+
         }
 
-
-        public double Change_24h
+        // search for pairs "Namr-ID" or validating ID itself
+        private string NameOrID(string calledValue)
         {
-            get
+            foreach(Coin element in namesIDs.assets)
             {
-                return change_24h;
+                if(element.asset_id.ToUpper() == calledValue)
+                {
+                    return calledValue;
+                }
+                if(element.name.ToUpper() == calledValue)
+                {
+                    return element.asset_id;
+                }
+
+                
             }
-
-            set
-            {
-                change_24h = value;
-                OnPropertyChanged("Change_24h");
-            }
-        }
-
-        public void GetSearchResult(string ID)
-        {
-            asset = GetInfo(ID).GetAwaiter().GetResult();
-            Asset_id = asset.asset.asset_id;
-            Name = asset.asset.name;
-            Price = asset.asset.price;
-            Volume_24h = asset.asset.volume_24h;
-            Change_24h = asset.asset.change_24h;
-        }
-
-        private static async Task<Assets> GetInfo(string ID)
-        {
-            var asset = await GetInfoUsingApi.GetAssets(ID);
-            return asset;
+            return " ";
         }
 
         
+        private void SaveMarkets()
+        {
+            sixMarkets.Clear();
+            for (int i = 0; i < 6; i++)
+            {
+                sixMarkets.Add(markets.markets[i]);
+            }
+        }
+
+        public ICommand bMarketQuote_Click
+        {
+            get
+            {
+                return new RelayCommand(() => {
+                    if (ButtonText == "Quote")
+                    {
+                        ButtonText = "Markets";
+                        SearchSubpage = marketsPage;
+                    }
+                    else
+                    {
+                        ButtonText = "Quote";
+                        SearchSubpage = quotePage;
+                    }
+                });
+            }
+
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

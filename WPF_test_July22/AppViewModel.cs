@@ -14,33 +14,39 @@ namespace WPF_test_July22
 {
      class AppViewModel : INotifyPropertyChanged
     {
+        // necessary pages
         private Page currentPage;
-
         private Top10Page top10Page;
-
         private SearchPage searchPage;
+        private ConvertPage convertPage;
+        private NotFoundPage notFoundPage;
 
         private string iD;
 
+        // objects for DataContext
         private SearchFields sFields;
+        private Top10Fields t10Fields;
+        private Converter converter;
 
 
         public AppViewModel()
         {
             
             top10Page = new Top10Page();
-
             searchPage = new SearchPage();
-
-            top10Page.DataContext = new AssetsLoader();
-
-            CurrentPage = top10Page;
-
-            ID = "";
+            notFoundPage = new NotFoundPage();
+            convertPage = new ConvertPage();
 
             sFields = new SearchFields();
+            t10Fields = new Top10Fields();
+            converter = new Converter();
 
             searchPage.DataContext = sFields;
+            top10Page.DataContext = t10Fields;
+            convertPage.DataContext = converter;
+
+            CurrentPage = top10Page; // start application with TOP10 page
+            ID = " ";
 
         }
 
@@ -74,7 +80,7 @@ namespace WPF_test_July22
         {
             get
             {
-                return new RelayCommand(() => CurrentPage = top10Page);
+                return new RelayCommand(() => { t10Fields.GetSearchResult(); CurrentPage = top10Page; });
             }
        
         }
@@ -85,7 +91,27 @@ namespace WPF_test_July22
         {
             get
             {
-                return new RelayCommand(() => { sFields.GetSearchResult(ID); CurrentPage = searchPage;  });
+                return new RelayCommand(() => { 
+                    sFields.GetSearchResult(ID.ToUpper());
+                    if (sFields.asset == null)
+                    {
+                        CurrentPage = notFoundPage;
+                    }
+                    else
+                    {
+                        CurrentPage = searchPage;
+                    }
+                      
+                });
+            }
+
+        }
+
+        public ICommand bConvert_Click
+        {
+            get
+            {
+                return new RelayCommand(() =>  CurrentPage = convertPage);
             }
 
         }

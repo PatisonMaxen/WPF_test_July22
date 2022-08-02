@@ -30,31 +30,31 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <TextBlock HorizontalAlignment="Left" Margin="3,10,0,10" TextWrapping="Wrap" Text="Most popular" Height="30" Width="150" FontSize="20" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="35,10,0,10" TextWrapping="Wrap" Text="Most popular" Height="30" Width="150" FontSize="20" Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="2"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="35,10,0,10" TextWrapping="Wrap" Text="{Binding assets.assets[0].name}" Height="30" Width="150" FontSize="20" Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding assets.assets[1].name}" Height="30" Width="150" FontSize="20" Grid.Row="2" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding assets.assets[2].name}" Height="30" Width="150" FontSize="20" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding assets.assets[3].name}" Height="30" Width="150" FontSize="20" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding assets.assets[4].name}" Height="30" Width="150" FontSize="20" Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding assets.assets[5].name}" Height="30" Width="150" FontSize="20" Grid.Row="6" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding assets.assets[6].name}" Height="30" Width="150" FontSize="20" Grid.Row="7" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding assets.assets[7].name}" Height="30" Width="150" FontSize="20" Grid.Row="8" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding assets.assets[8].name}" Height="30" Width="150" FontSize="20" Grid.Row="9" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding assets.assets[9].name}" Height="30" Width="150" FontSize="20" Grid.Row="10" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="35,10,0,10" TextWrapping="Wrap" Text="{Binding Coins[0].name}" Height="30" Width="150" FontSize="20" Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding Coins[1].name}" Height="30" Width="150" FontSize="20" Grid.Row="2" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding Coins[2].name}" Height="30" Width="150" FontSize="20" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding Coins[3].name}" Height="30" Width="150" FontSize="20" Grid.Row="4" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding Coins[4].name}" Height="30" Width="150" FontSize="20" Grid.Row="5" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding Coins[5].name}" Height="30" Width="150" FontSize="20" Grid.Row="6" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding Coins[6].name}" Height="30" Width="150" FontSize="20" Grid.Row="7" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding Coins[7].name}" Height="30" Width="150" FontSize="20" Grid.Row="8" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding Coins[8].name}" Height="30" Width="150" FontSize="20" Grid.Row="9" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Center" Margin="34,10,46,10" TextWrapping="Wrap" Text="{Binding Coins[9].name}" Height="30" Width="150" FontSize="20" Grid.Row="10" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
 
         <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="Price in USD" Height="30" Width="121" FontSize="20" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right" TextDecorations="{x:Null}" FontWeight="Bold"/>
 
-        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding assets.assets[0].price}" Height="30" Width="121" FontSize="20" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding assets.assets[1].price}" Height="30" Width="121" FontSize="20" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding assets.assets[2].price}" Height="30" Width="121" FontSize="20" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding assets.assets[3].price}" Height="30" Width="121" FontSize="20" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding assets.assets[4].price}" Height="30" Width="121" FontSize="20" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding assets.assets[5].price}" Height="30" Width="121" FontSize="20" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding assets.assets[6].price}" Height="30" Width="121" FontSize="20" Grid.Row="7" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding assets.assets[7].price}" Height="30" Width="121" FontSize="20" Grid.Row="8" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding assets.assets[8].price}" Height="30" Width="121" FontSize="20" Grid.Row="9" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding assets.assets[9].price}" Height="30" Width="121" FontSize="20" Grid.Row="10" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding Coins[0].price}" Height="30" Width="121" FontSize="20" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding Coins[1].price}" Height="30" Width="121" FontSize="20" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding Coins[2].price}" Height="30" Width="121" FontSize="20" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding Coins[3].price}" Height="30" Width="121" FontSize="20" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding Coins[4].price}" Height="30" Width="121" FontSize="20" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding Coins[5].price}" Height="30" Width="121" FontSize="20" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding Coins[6].price}" Height="30" Width="121" FontSize="20" Grid.Row="7" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding Coins[7].price}" Height="30" Width="121" FontSize="20" Grid.Row="8" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding Coins[8].price}" Height="30" Width="121" FontSize="20" Grid.Row="9" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,10,29,10" TextWrapping="Wrap" Text="{Binding Coins[9].price}" Height="30" Width="121" FontSize="20" Grid.Row="10" Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"/>
 
         <TextBlock HorizontalAlignment="Center" Margin="4,10,9,10" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="1." VerticalAlignment="Center" Height="30" Width="26" TextAlignment="Right" FontSize="20"/>
         <TextBlock HorizontalAlignment="Center" Margin="4,10,9,10" Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="2." VerticalAlignment="Center" Height="30" Width="26" TextAlignment="Right" FontSize="20"/>

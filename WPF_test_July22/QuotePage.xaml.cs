@@ -13,38 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace WPF_test_July22
 {
-
-
-
-  
-
-
-
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для QuotePage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class QuotePage : Page
     {
-        public MainWindow()
+        public QuotePage()
         {
-
             InitializeComponent();
-            
-            ApiHelper.InitializeClient();
-
-            
-
-            DataContext = new AppViewModel();
-
-
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

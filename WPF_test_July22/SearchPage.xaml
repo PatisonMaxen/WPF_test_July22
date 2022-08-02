@@ -16,10 +16,10 @@
             <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="41"/>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="69"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
@@ -30,19 +30,23 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,11,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="59" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,4,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Width="59" FontSize="20"/>
 
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="80,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20" Text="{Binding Name}" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="75,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20" Text="{Binding searchFields[0].name}" Grid.ColumnSpan="2"/>
 
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,11,0,0" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Top" Width="35" FontSize="20" Grid.Column="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="0,4,0,0" TextWrapping="Wrap" Text="ID:" VerticalAlignment="Top" Width="35" FontSize="20" Grid.Column="2" RenderTransformOrigin="0.457,0.2"/>
 
-        <TextBlock Grid.Column="3" HorizontalAlignment="Left" Height="30" Margin="21,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" FontSize="20" Text="{Binding Asset_id}"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="Price in USD:" VerticalAlignment="Top" Width="116" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="Price change in 24h:" VerticalAlignment="Top" Width="180" FontSize="20" Grid.ColumnSpan="2" Grid.Row="2" RenderTransformOrigin="0.586,2.267"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="Volume:" VerticalAlignment="Top" Width="163" FontSize="20" Grid.Row="3" Grid.ColumnSpan="2"/>
-        
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontSize="20" Text="{Binding Price}" Grid.Row="1" Grid.ColumnSpan="2"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontSize="20" Text="{Binding Change_24h}" Grid.Row="2" Grid.ColumnSpan="2"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontSize="20" Text="{Binding Volume_24h}" Grid.Row="3" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="3" HorizontalAlignment="Left" Height="30" Margin="0,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" FontSize="20" Text="{Binding searchFields[0].asset_id}"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,1,0,0" TextWrapping="Wrap" Text="Price in USD:" VerticalAlignment="Top" Width="116" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,0,0,0" TextWrapping="Wrap" Text="Price change in 24h:" VerticalAlignment="Top" Width="180" FontSize="20" Grid.ColumnSpan="2" Grid.Row="2" RenderTransformOrigin="0.586,2.267"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,0,0,0" TextWrapping="Wrap" Text="Volume:" VerticalAlignment="Top" Width="163" FontSize="20" Grid.Row="3" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Height="30" Margin="0,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontSize="20" Text="{Binding searchFields[0].price}" Grid.Row="1" Grid.ColumnSpan="2" TextAlignment="Right"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontSize="20" Text="{Binding searchFields[0].change_24h}" Grid.Row="2" Grid.ColumnSpan="2" TextAlignment="Right"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontSize="20" Text="{Binding searchFields[0].volume_24h}" Grid.Row="3" Grid.ColumnSpan="2" TextAlignment="Right"/>
+        <Frame Grid.ColumnSpan="4" Content="{Binding SearchSubpage}" HorizontalAlignment="Left" Height="362" Grid.Row="4" Grid.RowSpan="8" VerticalAlignment="Top" Width="392"/>
+        <Button Content="{Binding ButtonText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="29" Margin="10,40,0,0" Grid.Row="3" VerticalAlignment="Top" Width="116" Command="{Binding Path=bMarketQuote_Click}" Grid.ColumnSpan="2"/>
+
+
     </Grid>
 </Page>

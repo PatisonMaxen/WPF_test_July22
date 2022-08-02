@@ -1,0 +1,45 @@
+﻿<Page x:Class="WPF_test_July22.QuotePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF_test_July22"
+      mc:Ignorable="d" 
+      d:DesignHeight="362" d:DesignWidth="392"
+      Title="QuoteChartsPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="51"/>
+            <RowDefinition Height="51"/>
+            <RowDefinition Height="51"/>
+            <RowDefinition Height="51"/>
+            <RowDefinition Height="51"/>
+            <RowDefinition Height="51"/>
+            <RowDefinition Height="56"/>
+
+
+
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="USD" VerticalAlignment="Top" Width="164" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="EUR" VerticalAlignment="Top" Width="164" Grid.Row="1" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="GBP" VerticalAlignment="Top" Width="164" Grid.Row="2" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="JPY" VerticalAlignment="Top" Width="164" Grid.Row="3" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="NZD" VerticalAlignment="Top" Width="164" Grid.Row="4" Margin="10,10,0,0" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="CAD" VerticalAlignment="Top" Width="164" Grid.Row="5" Margin="10,10,0,0" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="AUD" VerticalAlignment="Top" Width="164" Grid.Row="6" FontSize="20"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="218,10,0,0" TextWrapping="Wrap" Text="{Binding quoteFields[0].quote.USD.price}" VerticalAlignment="Top" Width="164" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="218,10,0,0" TextWrapping="Wrap" Text="{Binding quoteFields[0].quote.EUR.price}" VerticalAlignment="Top" Width="164" Grid.Row="1" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="218,10,0,0" TextWrapping="Wrap" Text="{Binding quoteFields[0].quote.GBP.price}" VerticalAlignment="Top" Width="164" Grid.Row="2" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="218,10,0,0" TextWrapping="Wrap" Text="{Binding quoteFields[0].quote.JPY.price}" VerticalAlignment="Top" Width="164" Grid.Row="3" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="{Binding quoteFields[0].quote.NZD.price}" VerticalAlignment="Top" Width="164" Grid.Row="4" Margin="218,10,0,0" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="{Binding quoteFields[0].quote.CAD.price}" VerticalAlignment="Top" Width="164" Grid.Row="5" Margin="218,10,0,0" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="218,10,0,0" TextWrapping="Wrap" Text="{Binding quoteFields[0].quote.AUD.price}" VerticalAlignment="Top" Width="164" Grid.Row="6" FontSize="20"/>
+
+
+
+    </Grid>
+</Page>
+

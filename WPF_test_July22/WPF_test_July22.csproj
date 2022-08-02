@@ -79,15 +79,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AssetsLoader.cs" />
-    <Compile Include="OneAssetLoader.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="ConvertPage.xaml.cs">
+      <DependentUpon>ConvertPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InternalExchangesType.cs" />
+    <Compile Include="Markets.cs" />
+    <Compile Include="MarketsPage.xaml.cs">
+      <DependentUpon>MarketsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MarketsQuotes.cs" />
+    <Compile Include="NotFoundPage.xaml.cs">
+      <DependentUpon>NotFoundPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Quote.cs" />
+    <Compile Include="QuotePage.xaml.cs">
+      <DependentUpon>QuotePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RealCurrencies.cs" />
     <Compile Include="SearchFields.cs" />
     <Compile Include="SearchPage.xaml.cs">
       <DependentUpon>SearchPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Top10Fields.cs" />
     <Compile Include="Top10Page.xaml.cs">
       <DependentUpon>Top10Page.xaml</DependentUpon>
     </Compile>
+    <Page Include="ConvertPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -105,6 +126,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MarketsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotFoundPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuotePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SearchPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

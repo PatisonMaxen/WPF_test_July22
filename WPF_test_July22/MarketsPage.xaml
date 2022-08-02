@@ -1,0 +1,38 @@
+﻿<Page x:Class="WPF_test_July22.MarketsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF_test_July22"
+      mc:Ignorable="d" 
+      d:DesignHeight="362" d:DesignWidth="392"
+      Title="MarketsPage">
+
+    <Grid Background="White">
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="16,60,0,0" TextWrapping="Wrap" Text="{Binding marketFields[0].exchange_id}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="16,110,0,0" TextWrapping="Wrap" Text="{Binding marketFields[1].exchange_id}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="16,160,0,0" TextWrapping="Wrap" Text="{Binding marketFields[2].exchange_id}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="16,210,0,0" TextWrapping="Wrap" Text="{Binding marketFields[3].exchange_id}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="16,260,0,0" TextWrapping="Wrap" Text="{Binding marketFields[4].exchange_id}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="16,310,0,0" TextWrapping="Wrap" Text="{Binding marketFields[5].exchange_id}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="144,60,0,0" TextWrapping="Wrap" Text="{Binding marketFields[0].symbol}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="144,110,0,0" TextWrapping="Wrap" Text="{Binding marketFields[1].symbol}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="144,160,0,0" TextWrapping="Wrap" Text="{Binding marketFields[2].symbol}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="144,210,0,0" TextWrapping="Wrap" Text="{Binding marketFields[3].symbol}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="144,260,0,0" TextWrapping="Wrap" Text="{Binding marketFields[4].symbol}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="144,310,0,0" TextWrapping="Wrap" Text="{Binding marketFields[5].symbol}" VerticalAlignment="Top" Width="97" FontSize="20"/>
+
+
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="274,60,0,0" TextWrapping="Wrap" Text="{Binding marketFields[0].price}" VerticalAlignment="Top" Width="97" FontSize="20" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="274,110,0,0" TextWrapping="Wrap" Text="{Binding marketFields[1].price}" VerticalAlignment="Top" Width="97" FontSize="20" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="274,160,0,0" TextWrapping="Wrap" Text="{Binding marketFields[2].price}" VerticalAlignment="Top" Width="97" FontSize="20" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="274,210,0,0" TextWrapping="Wrap" Text="{Binding marketFields[3].price}" VerticalAlignment="Top" Width="97" FontSize="20" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="274,260,0,0" TextWrapping="Wrap" Text="{Binding marketFields[4].price}" VerticalAlignment="Top" Width="97" FontSize="20" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="274,310,0,0" TextWrapping="Wrap" Text="{Binding marketFields[5].price}" VerticalAlignment="Top" Width="97" FontSize="20" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="16,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" FontSize="20"><Run FontWeight="Bold" Text="Exchange"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="144,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" FontSize="20"><Run FontWeight="Bold" Text="Pair"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="274,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" FontSize="20"><Run FontWeight="Bold" Text="Price"/></TextBlock>
+
+    </Grid>
+</Page>

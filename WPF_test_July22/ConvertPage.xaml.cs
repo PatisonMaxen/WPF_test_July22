@@ -13,38 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace WPF_test_July22
 {
-
-
-
-  
-
-
-
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ConvertPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ConvertPage : Page
     {
-        public MainWindow()
+        public ConvertPage()
         {
-
             InitializeComponent();
-            
-            ApiHelper.InitializeClient();
-
-            
-
-            DataContext = new AppViewModel();
-
-
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

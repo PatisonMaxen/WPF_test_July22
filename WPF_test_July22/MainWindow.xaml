@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_test_July22"
         mc:Ignorable="d" Loaded="Window_Loaded"
-        Title="Crypto Coin Search" Height="643.5" Width="400" Visibility="Visible" MinWidth="400" MinHeight="600" Name="mainWindow">
+        Title="Crypto Coin Search" Height="644" Width="400" Visibility="Visible" MinWidth="400" MinHeight="642" Name="mainWindow" MaxWidth="400" MaxHeight="644">
     <Grid>
 
 
@@ -16,14 +16,9 @@
 
         <Button Content="Top 10" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="53" Command="{Binding Path=bTop10_Click}"/>
 
-        <Button Content="Search" HorizontalAlignment="Left" Height="25" Margin="236,10,0,0" VerticalAlignment="Top" Width="69" Command="{Binding Path=bSearch_Click}" />
-
-        <ComboBox HorizontalAlignment="Left" Height="25" Margin="310,10,0,0" VerticalAlignment="Top" Width="64" SelectedIndex="0">
-            <TextBlock>Name</TextBlock>
-            <TextBlock>ID</TextBlock>
-        </ComboBox>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="68,10,0,0" TextWrapping="Wrap" Text="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="163"/>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="262,40,0,0" TextWrapping="Wrap" Text="{Binding ID}" VerticalAlignment="Top" Width="112"/>
+        <Button Content="Search" HorizontalAlignment="Left" Height="25" Margin="307,10,0,0" VerticalAlignment="Top" Width="69" Command="{Binding Path=bSearch_Click}" />
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="140,10,0,0" TextWrapping="Wrap" Text="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="162" FontSize="16"/>
+        <Button Content="Converter" HorizontalAlignment="Left" Height="25" Margin="68,10,0,0" VerticalAlignment="Top" Width="67" Command="{Binding Path=bConvert_Click}"/>
 
 
 

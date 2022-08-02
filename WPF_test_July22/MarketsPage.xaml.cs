@@ -13,38 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace WPF_test_July22
 {
-
-
-
-  
-
-
-
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MarketsPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MarketsPage : Page
     {
-        public MainWindow()
+        public MarketsPage()
         {
-
             InitializeComponent();
-            
-            ApiHelper.InitializeClient();
-
-            
-
-            DataContext = new AppViewModel();
-
-
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

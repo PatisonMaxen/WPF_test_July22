@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace WPF_test_July22
 {
+    // Basic class for storing currency's info
     class Coin : INotifyPropertyChanged
     {
 
@@ -16,6 +17,8 @@ namespace WPF_test_July22
         public double price { get; set; }
         public double volume_24h { get; set; }
         public double change_24h { get; set; }
+
+        public RealCurrencies quote { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

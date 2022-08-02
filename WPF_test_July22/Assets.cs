@@ -8,10 +8,10 @@ using System.Runtime.CompilerServices;
 
 namespace WPF_test_July22
 {
+    // Basic class for storing assets (one or multiple)
     class Assets
-    {
+    { 
         public Coin[] assets { get; set; }
-
         public Coin asset { get; set; }
 
     }

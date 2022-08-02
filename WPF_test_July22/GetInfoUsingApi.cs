@@ -8,45 +8,69 @@ using System.Net.Http.Headers;
 
 namespace WPF_test_July22
 {
-    class GetInfoUsingApi
+    // Main class for getting info via API
+    static class GetInfoUsingApi
     {
-        public static async Task<Assets> GetAssets()
+        public static Assets GetAssets(int size)
         {
-            string url = "https://cryptingup.com/api/assets";
+            string url = "https://cryptingup.com/api/assets?size=" + size;
 
+            return GetInfo<Assets>(url).GetAwaiter().GetResult();
+
+        }
+
+        public static Assets GetOneAsset(string ID)
+        {
+            string url = "https://cryptingup.com/api/assets/" + ID.ToUpper();
+
+            return GetInfo<Assets>(url).GetAwaiter().GetResult();
+            
+            
+        }
+        public static Assets GetNamesIDs()
+        {
+
+            string url = "https://cryptingup.com/api/assetsoverview";
+
+            return GetInfo<Assets>(url).GetAwaiter().GetResult();
+
+           
+        }
+
+        public static Markets GetMarkets(string ID)
+        {
+            string url = $"https://cryptingup.com/api/assets/{ID}/markets";
+
+            return GetInfo<Markets>(url).GetAwaiter().GetResult();
+        }
+
+        
+        // Internal method for doing calls
+        private static async Task<T> DoCall<T>(string url)
+        {
             using (HttpResponseMessage response = ApiHelper.ApiClient.GetAsync(url).Result)
             {
+                T result;
                 if (response.IsSuccessStatusCode)
                 {
-                    Assets assets = await response.Content.ReadAsAsync<Assets>();
+                    result = await response.Content.ReadAsAsync<T>();
 
-                    return assets;
+                    return (T)Convert.ChangeType(result, typeof(T));
                 }
                 else
                 {
-                    throw new Exception(response.ReasonPhrase);
+                    return (T)Convert.ChangeType(null, typeof(T));
                 }
             }
         }
-
-        public static async Task<Assets> GetAssets(string ID)
+        private static async Task<T> GetInfo<T>(string url)
         {
-            string url = "https://cryptingup.com/api/assets/" + ID;
-
-            using (HttpResponseMessage response = ApiHelper.ApiClient.GetAsync(url).Result)
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    Assets asset = await response.Content.ReadAsAsync<Assets>();
-
-                    return asset;
-                }
-                else
-                {
-                    throw new Exception(response.ReasonPhrase);
-                }
-            }
+            var result = await DoCall<T>(url);
+            return (T)Convert.ChangeType(result, typeof(T));
         }
-
     }
+
+   
+
+
 }

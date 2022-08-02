@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 
 namespace WPF_test_July22
 {
+    // HTTP-client, that is used for taking JSON-files via WEB API
     class ApiHelper
     {
         public static HttpClient ApiClient { get; set; }
