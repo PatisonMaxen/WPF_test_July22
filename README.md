@@ -33,7 +33,7 @@ Application consists of next pages:
 
 ## My opinnion and thoughts
 
-The most complex project I've ever made. In result I have a small application, that can do useful things if it's needed; gain new experience and skills, improve old ones. It's was challenging, but more important, it was fun (but not buttons, buttons are creapy).
+The most complex project I've ever made. In result I have a small application, that can do useful things if it's needed; gain new experience and skills, improve old ones. It was challenging, but more important, it was fun (but not buttons, buttons are creepy).
 In conclusion I can only say:
 ![](https://en.meming.world/images/en/b/be/But_It%27s_Honest_Work.jpg)
 
